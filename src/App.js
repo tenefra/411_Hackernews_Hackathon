@@ -9,16 +9,28 @@ class App extends Component {
     super(props)
 
     this.state = {
-      posts: []
+      posts: [],
+      searchText: ""
     }
   }
 
-  searchHandler(e) {
-    axios.get(`http://hn.algolia.com/api/v1/search?query=${e.target.value}`).then(res => {
+  searchChange = e => {
+    this.setState({
+      searchText: e.target.value
+    })
+  }
+
+  searchHandler = e => {
+    e.preventDefault()
+    axios.get(`http://hn.algolia.com/api/v1/search?query=${this.state.searchText}`).then(res => {
       const posts = res.data.hits
       console.log(posts)
       this.setState({ posts })
     })
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.searchText)
   }
 
   componentDidMount() {
@@ -32,8 +44,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <List key={this.state.index} state={this.state} />
+        <Header state={this.state} searchChange={this.searchChange} searchHandler={this.searchHandler} />
+        <List state={this.state} />
       </div>
     )
   }
