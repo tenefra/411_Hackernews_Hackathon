@@ -1,6 +1,7 @@
 import { Component } from "react"
 import axios from "axios"
 
+import Header from "./components/header/Header"
 import List from "./components/list/List"
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Header />
         <ul>
           {this.state.posts.map((post, index) => {
             return (
