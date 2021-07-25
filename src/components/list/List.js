@@ -4,7 +4,7 @@ import Item from "../item/Item"
 function List(props) {
   return (
     <ul>
-      {props.state.posts.map((post, index) => {
+      {props.state.posts.map((post) => {
         return (
           <>
             <Item key={props.key} title={post.title} author={post.author} points={post.points} />
