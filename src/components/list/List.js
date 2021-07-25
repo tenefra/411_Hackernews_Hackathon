@@ -1,12 +1,17 @@
 import React from "react"
+import Item from "../item/Item"
 
 function List(props) {
   return (
-    <li>
-      <h5>{props.points}</h5>
-      <h3>{props.title}</h3>
-      <p>{props.author}</p>
-    </li>
+    <ul>
+      {props.state.posts.map((post, index) => {
+        return (
+          <>
+            <Item key={props.key} title={post.title} author={post.author} points={post.points} />
+          </>
+        )
+      })}
+    </ul>
   )
 }
 

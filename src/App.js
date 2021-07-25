@@ -33,15 +33,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <ul>
-          {this.state.posts.map((post, index) => {
-            return (
-              <>
-                <List key={index} title={post.title} author={post.author} points={post.points} />
-              </>
-            )
-          })}
-        </ul>
+        <List key={this.state.index} state={this.state} />
       </div>
     )
   }
