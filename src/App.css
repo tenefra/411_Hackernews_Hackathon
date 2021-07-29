@@ -1,0 +1,60 @@
+header {
+    margin-left: 50px;
+}
+
+#searchBar {
+    width: 400px;
+}
+
+#item {
+    border-bottom: solid 1px #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#item div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px; 
+}
+
+#item a {
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#item a:hover {
+    text-decoration: underline;
+}
+
+#item div p {
+    margin-top: 10px;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+#item div a {
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 10px;
+    color: black;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+#item div a:hover {
+    text-decoration: underline;
+}
+
+#hide {
+    font-weight: bold;
+}
+
+#hide:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
