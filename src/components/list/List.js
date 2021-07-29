@@ -3,15 +3,15 @@ import Item from "../item/Item"
 
 function List(props) {
   return (
-    <ul>
-      {props.state.posts.map((post) => {
+    <ol>
+      {props.state.posts.map((post, index) => {
         return (
           <>
-            <Item key={props.key} title={post.title} author={post.author} points={post.points} />
+            <Item hide={props.hide} key={index} title={post.title} author={post.author} points={post.points} url={post.url} index={index} story={post.objectID} comments={post.num_comments}/>
           </>
         )
       })}
-    </ul>
+    </ol>
   )
 }
 

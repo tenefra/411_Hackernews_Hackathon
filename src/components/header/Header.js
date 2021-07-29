@@ -6,11 +6,12 @@ function Header(props) {
       <header>
         <h1>Search Hacker News</h1>
         <form onSubmit={props.searchHandler}>
-          <input
+          <input id="searchBar"
             type="text"
             onChange={e => {
               props.searchChange(e)
             }}
+            
             value={props.state.searchText}
             placeholder="Search stories by title, url or author"
           ></input>
